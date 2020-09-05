@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
-  String namePlace;
-  double stars;
-  String descriptionPlace;
+  final String namePlace;
+  final double stars;
+  final String descriptionPlace;
 
   DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
 
@@ -21,7 +21,7 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    final title_stars = Row(
+    final titleStars = Row(
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
@@ -34,12 +34,12 @@ class DescriptionPlace extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        _drawStars(stars)
+        _drawStars(stars),
       ],
     );
 
     return Column(
-      children: [title_stars, description],
+      children: [titleStars, description],
     );
   }
 
