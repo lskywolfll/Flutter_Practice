@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:platzi_flutter/pages/review.dart';
 
 class ReviewList extends StatelessWidget {
