@@ -1,15 +1,77 @@
 import 'package:flutter/material.dart';
+import '../controllers/stars.dart';
 
+// ignore: must_be_immutable
 class Review extends StatelessWidget {
-  String pathImage =
-      "https://images.unsplash.com/photo-1599302761127-e3ed900207fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80";
+  final String pathImage;
+  final String userName;
+  String details = "1 review 5 photos";
+  final String comment;
+  final double pointStars;
+  double _spacing = 5.0;
 
-  Review(this.pathImage);
+  Review(this.pathImage, this.userName, this.comment, this.pointStars);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [_foto()],
+      children: <Widget>[
+        _foto(),
+        _userDetails(),
+      ],
+    );
+  }
+
+  Widget userComment() {
+    return Container(
+      margin: EdgeInsets.only(left: 20.0, top: _spacing),
+      child: Text(
+        comment,
+        style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 17.0,
+            color: Colors.black,
+            fontWeight: FontWeight.w900),
+      ),
+    );
+  }
+
+  Widget userInfo() {
+    return Container(
+      margin: EdgeInsets.only(left: 20.0, top: _spacing),
+      child: Text(
+        details,
+        style: TextStyle(
+            fontFamily: 'Lato', fontSize: 17.0, color: Color(0xFFa3a5a7)),
+      ),
+    );
+  }
+
+  Widget userInfoAndStars() {
+    return Row(
+      children: <Widget>[userInfo(), stars.drawStars(pointStars, 0, 3.0)],
+    );
+  }
+
+  Widget _userName() {
+    return Container(
+      margin: EdgeInsets.only(left: 20.0, top: _spacing),
+      child: Text(
+        userName,
+        textAlign: TextAlign.left,
+        style: TextStyle(
+            fontSize: 17.0,
+            fontFamily: 'Lato',
+            fontWeight: FontWeight.w900,
+            color: Colors.black),
+      ),
+    );
+  }
+
+  Widget _userDetails() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[_userName(), userInfoAndStars(), userComment()],
     );
   }
 

@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_flutter/pages/review_list.dart';
+import '../controllers/stars.dart';
+import 'package:platzi_flutter/pages/review.dart';
 
 class DescriptionPlace extends StatelessWidget {
   final String namePlace;
-  final double stars;
+  final double pointStars;
   final String descriptionPlace;
 
-  DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
+  DescriptionPlace(this.namePlace, this.pointStars, this.descriptionPlace);
+
+  String texto =
+      "https://images.unsplash.com/photo-1599302761127-e3ed900207fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80";
+  String userName = 'Varuna Yasas';
+  String comment = "There is an amazin place in Sri Lanka";
 
   @override
   Widget build(BuildContext context) {
@@ -34,66 +42,12 @@ class DescriptionPlace extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        _drawStars(stars),
+        stars.drawStars(pointStars, 323.0, 3.0)
       ],
     );
 
     return Column(
-      children: [titleStars, description],
-    );
-  }
-
-  Widget _drawStars(double numberStars) {
-    List<Widget> rowStars = [];
-
-    for (var i = 0; i < 5; i++) {
-      rowStars.add(starWidget(numberStars));
-      numberStars--;
-    }
-
-    return Row(
-      children: rowStars,
-    );
-  }
-
-  Widget starWidget(double valueStar) {
-    return Container(
-      margin: EdgeInsets.only(top: 323.0, right: 3.0),
-      child: validateStarIconWidget(valueStar),
-    );
-  }
-
-  Widget validateStarIconWidget(double pointStar) {
-    if (pointStar >= 1.0) {
-      return fullStarIconWidget();
-    }
-
-    if (pointStar >= 0.5) {
-      print(pointStar);
-      return halfStarIconWidget();
-    }
-
-    return emptyStarIconWidget();
-  }
-
-  Widget fullStarIconWidget() {
-    return new Icon(
-      Icons.star,
-      color: Color(0XFFF2C611),
-    );
-  }
-
-  Widget halfStarIconWidget() {
-    return new Icon(
-      Icons.star_half,
-      color: Color(0XFFF2C611),
-    );
-  }
-
-  Widget emptyStarIconWidget() {
-    return new Icon(
-      Icons.star_border,
-      color: Color(0XFFF2C611),
+      children: [titleStars, description, ReviewList()],
     );
   }
 }

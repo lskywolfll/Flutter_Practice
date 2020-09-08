@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
@@ -31,10 +32,11 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('Page0'),
-          ),
-          body: DescriptionPlace('Bahamas', 4.6, _texto),
-        ));
+            appBar: AppBar(
+              title: Text('Page0'),
+            ),
+            body: SingleChildScrollView(
+              child: DescriptionPlace('Bahamas', 4.6, _texto),
+            )));
   }
 }
