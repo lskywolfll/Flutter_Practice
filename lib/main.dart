@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_flutter/pages/description_place.dart';
+import 'package:platzi_flutter/pages/gradient_back.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,11 +33,18 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Scaffold(
-            appBar: AppBar(
-              title: Text('Page0'),
+            // appBar: AppBar(
+            //   title: Text('Page0'),
+            // ),
+            body: Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                DescriptionPlace("fuidsajfuisad", 5, _texto),
+              ],
             ),
-            body: SingleChildScrollView(
-              child: DescriptionPlace('Bahamas', 4.6, _texto),
-            )));
+            GradientBack()
+          ],
+        )));
   }
 }

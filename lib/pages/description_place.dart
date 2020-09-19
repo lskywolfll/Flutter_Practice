@@ -3,6 +3,8 @@ import 'package:platzi_flutter/pages/review_list.dart';
 import '../controllers/stars.dart';
 import 'package:platzi_flutter/pages/review.dart';
 
+import '../controllers/stars.dart';
+
 class DescriptionPlace extends StatelessWidget {
   final String namePlace;
   final double pointStars;
@@ -32,7 +34,7 @@ class DescriptionPlace extends StatelessWidget {
     final titleStars = Row(
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
+          margin: EdgeInsets.only(top: 320.0, left: 20.0, right: 3.0),
           child: Text(
             namePlace,
             style: TextStyle(
