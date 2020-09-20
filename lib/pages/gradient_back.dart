@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class GradientBack extends StatelessWidget {
-  final String title = "Popular";
+  final String title;
+
+  GradientBack(this.title);
 
   @override
   Widget build(BuildContext context) {

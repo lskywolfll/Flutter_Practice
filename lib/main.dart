@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_flutter/components/header_appbar.dart';
 import 'package:platzi_flutter/pages/description_place.dart';
-import 'package:platzi_flutter/pages/gradient_back.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
                 DescriptionPlace("fuidsajfuisad", 5, _texto),
               ],
             ),
-            GradientBack()
+            HeaderAppBar()
           ],
         )));
   }

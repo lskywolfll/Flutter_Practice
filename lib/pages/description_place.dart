@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_flutter/components/button_purple.dart';
 import 'package:platzi_flutter/pages/review_list.dart';
 import '../controllers/stars.dart';
 
@@ -41,7 +42,13 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     return Column(
-      children: [titleStars, description, ReviewList()],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        titleStars,
+        description,
+        ButtonPurple("Navigate"),
+        ReviewList()
+      ],
     );
   }
 }
