@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_flutter/pages/description_place.dart';
 import 'package:platzi_flutter/pages/gradient_back.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  String _texto =
+  final String _texto =
       'Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenan commodo ligula edget dolor.Aenan massa. Cum soccis natoque penatibus e tmagnins dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultrcies nec, pelientesque eu.\n\nPretium quis sem nulia consequat massa quis enim donec pede justo, frigilla vel, aliquect nec, vulputate edget, arculin enim justo, thoncus t, imperdiet a.';
 
   // This widget is the root of your application.
@@ -18,7 +22,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.
-          //
           // Try running your application with "flutter run". You'll see the
           // application has a blue toolbar. Then, without quitting the app, try
           // changing the primarySwatch below to Colors.green and then invoke

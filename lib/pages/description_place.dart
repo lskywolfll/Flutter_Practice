@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_flutter/pages/review_list.dart';
 import '../controllers/stars.dart';
-import 'package:platzi_flutter/pages/review.dart';
-
-import '../controllers/stars.dart';
 
 class DescriptionPlace extends StatelessWidget {
   final String namePlace;
@@ -11,11 +8,6 @@ class DescriptionPlace extends StatelessWidget {
   final String descriptionPlace;
 
   DescriptionPlace(this.namePlace, this.pointStars, this.descriptionPlace);
-
-  String texto =
-      "https://images.unsplash.com/photo-1599302761127-e3ed900207fd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80";
-  String userName = 'Varuna Yasas';
-  String comment = "There is an amazin place in Sri Lanka";
 
   @override
   Widget build(BuildContext context) {
