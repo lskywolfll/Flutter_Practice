@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_flutter/components/header_appbar.dart';
 import 'package:platzi_flutter/components/platzi_trips.dart';
+import 'package:platzi_flutter/components/platzi_trips_cupertino.dart';
 import 'package:platzi_flutter/pages/description_place.dart';
 import 'package:flutter/services.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+      SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.light, systemNavigationBarColor: Colors.transparent, systemNavigationBarIconBrightness: Brightness.light));
   runApp(MyApp());
 }
 
