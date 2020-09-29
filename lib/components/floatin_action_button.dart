@@ -22,7 +22,6 @@ class _FloatinActionButtonGreenState extends State<FloatinActionButtonGreen> {
   }
 
   void actionButton() {
-
     setState(() {
       estadoMeGusta == true ? estadoMeGusta = false : estadoMeGusta = true;
 
@@ -36,9 +35,10 @@ class _FloatinActionButtonGreenState extends State<FloatinActionButtonGreen> {
     });
   }
 
-  void mensajeAction(String texto,Color color){
-    Scaffold.of(context).showSnackBar(
-      SnackBar(content: Text(texto), backgroundColor: color,)
-    );
+  void mensajeAction(String texto, Color color) {
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text(texto),
+      backgroundColor: color,
+    ));
   }
 }
